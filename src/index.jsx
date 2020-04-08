@@ -7,10 +7,17 @@ import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 
+import Home from './components/home';
+import About from './components/about';
 import '../assets/stylesheets/application.scss';
 
+// State and reducers
+const initialState = {
+  changeMe: null
+};
+
 const reducers = combineReducers({
-  // key: reducer
+  changeMe: (state = null, action) => state
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
@@ -20,9 +27,10 @@ ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
     <Router history={history}>
       <Switch>
-        TODO
+        <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
       </Switch>
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('.container')
 );
