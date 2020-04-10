@@ -8,7 +8,7 @@ import Aside from '../components/aside';
 
 class CarsIndex extends Component {
   componentWillMount() {
-    this.props.fetchCars(this.props.garage);
+    // this.props.fetchCars(this.props.garage);
   }
 
   render () {
@@ -29,7 +29,7 @@ class CarsIndex extends Component {
           return (
             <div key={car.id} className="car-smallad">
               <Link to={`/cars/${car.id}`} key={car.id} />
-              <img className="car-logo" src="assets/images/logo.png" />
+              <img className="car-logo" src="assets/images/logo.png" alt="car-logo" />
               <div className="car-details">
                 <span>{car.brand} - {car.model}</span>
                 <ul>
@@ -42,7 +42,7 @@ class CarsIndex extends Component {
       </div>
     ];
   }
-};
+}
 
 function mapStateToProps(state) {
   return {

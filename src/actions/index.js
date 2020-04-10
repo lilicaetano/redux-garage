@@ -28,10 +28,10 @@ export function addCar(history, garage, car) {
   const promise = fetch(url, {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ car: car })
+    body: JSON.stringify({ car })
   })
   .then(() => history.push(""))
   .then(r => r.json());
