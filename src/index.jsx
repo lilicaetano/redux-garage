@@ -30,7 +30,9 @@ ReactDOM.render(
     <Router history={history}>
       <div className="view-container">
         <Switch>
-          <Route path="/" exact component={CarsIndex} />
+          <Route path="/" exact component={GarageIndex} />
+          <Route path="/garage/new" component={GarageNew} />
+          <Route path="/garage/:id" component={GarageShow} />
           <Route path="/cars/new" exact component={CarsNew} />
           <Route path="/cars/:id" component={CarsShow} />
         </Switch>

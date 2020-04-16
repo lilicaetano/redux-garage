@@ -10,8 +10,8 @@ class CardsNew extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const car = { owner: 'TODO', brand: 'TODO', model: 'TODO', plate: 'TODO', photo: 'TODO' };
-    this.props.addCar(this.props.history, this.props.garage, car);
+    const garage = { name: 'TODO', address: 'TODO', photo: 'TODO' };
+    this.props.addGarage(this.props.history, garage);
   }
 
   render () {
@@ -23,22 +23,18 @@ class CardsNew extends Component {
         <div className="overlay" />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label htmlFor="InputBrand">Brand</label>
-            <input type="text" className="form-control" id="InputBrand" placeholder="Aston Martin" />
+            <label htmlFor="InputBrand">Name</label>
+            <input type="text" className="form-control" id="InputBrand" placeholder="San Petrolyo" />
           </div>
           <div className="form-group">
-            <label htmlFor="InputModel">Model</label>
-            <input type="text" className="form-control" id="InputModel" placeholder="DB Mark III" />
+            <label htmlFor="InputModel">Address</label>
+            <input type="text" className="form-control" id="InputModel" placeholder="London" />
           </div>
           <div className="form-group">
-            <label htmlFor="InputOwner">Owner</label>
+            <label htmlFor="InputOwner">Photo</label>
             <input type="text" className="form-control" id="InputOwner" placeholder="James Bond" />
           </div>
-          <div className="form-group">
-            <label htmlFor="InputPlate">Plate</label>
-            <input type="text" className="form-control" id="InputPlate" placeholder="EGU-503H" />
-          </div>
-          <button type="submit">Add car</button>
+          <button type="submit">Add garage</button>
         </form>
       </div>
     ];
