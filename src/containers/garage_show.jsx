@@ -23,15 +23,14 @@ class GarageShow extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div className="car-container" key="car">
-        <div className="car-card">
-          <img className="car-picture" src="/assets/images/garage.png"/>
-          <div className="car-details">
-            <span>{car.brand} - {car.model}</span>
+      <div className="garage-container" key="garage">
+        <div className="garage-card">
+          <img className="garage-picture" src="/assets/images/garage.png"/>
+          <div className="garage-details">
+            <span>{garage.name}</span>
             <ul>
-              <li><strong>Owner:</strong> {car.owner}</li>
+              <li><strong>Address:</strong> {garage.address}</li>
             </ul>
-            <span className="plate">{car.plate}</span>
           </div>
           <button className="delete" onClick={this.handleClick}>
             <i className="fa fa-trash-o" aria-hidden="true"></i>
@@ -46,12 +45,12 @@ class GarageShow extends Component {
 function mapStateToProps(state, ownProps) {
   const id = parseInt(ownProps.match.params.id);
   return {
-    car: state.cars.find((car) => car.id === id),
+    garage: state.garages.find((garage) => garage.id === id),
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ removeCar }, dispatch);
+  return bindActionCreators({ removeGarage }, dispatch);
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CarsShow));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GarageShow));
