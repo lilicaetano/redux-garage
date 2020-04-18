@@ -21,8 +21,6 @@ class GarageShow extends Component {
   render () {
     const garage = this.props.garage;
 
-    console.log('garage', this.props.garage);
-
     if (!garage) {
       return (
         <Aside key="aside">
@@ -49,6 +47,7 @@ class GarageShow extends Component {
             Delete
           </button>
         </div>
+        <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
       </div>
     ];
   }

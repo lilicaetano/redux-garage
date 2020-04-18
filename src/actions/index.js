@@ -1,9 +1,16 @@
 const BASE_URL = 'https://api-garage-lili.herokuapp.com/garage';
 
 export function fetchCars(garageId) {
-  const url = `${BASE_URL}/${garageId}/cars`;
+  const url = `${BASE_URL}/${garageId}`;
   const promise = fetch(url)
-    .then(r => r.json());
+    .then(r => r.json())
+    .then(garage => {
+      return garage.cars || [];
+    })
+    .catch(err => {
+      console.log(err);
+      return [];
+    });
 
   return {
     type: 'FETCH_CARS',
@@ -11,20 +18,20 @@ export function fetchCars(garageId) {
   };
 }
 
-export function removeCar(history, garageId, car) {
-  const url = `${BASE_URL}/${garageId}/cars/${car.id}`;
+export function removeCar(history, garageId, carId) {
+  const url = `${BASE_URL}/${garageId}/car/${carId}`;
   fetch(url, { method: 'DELETE' })
     .then(r => r.json())
-    .then(() => history.push(""));
+    .then(() => history.push(`/garage/${garageId}/cars`));
 
   return {
     type: 'REMOVE_CAR',
-    payload: car
+    payload: carId
   };
 }
 
 export function addCar(history, garageId, car) {
-  const url = `${BASE_URL}/${garageId}/cars`;
+  const url = `${BASE_URL}/${garageId}/car`;
   const promise = fetch(url, {
     method: 'POST',
     headers: {
@@ -33,8 +40,8 @@ export function addCar(history, garageId, car) {
     },
     body: JSON.stringify(car)
   })
-  .then(() => history.push(""))
-  .then(r => r.json());
+    .then(r => r.json())
+    .then(() => history.push(`/garage/${garageId}/cars`));
 
   return {
     type: 'ADD_CAR',
@@ -76,8 +83,11 @@ export function addGarage(history, garage) {
     },
     body: JSON.stringify(garage)
   })
-  .then(() => history.push(""))
-  .then(r => r.json());
+  .then(r => r.json())
+  .then((json) => {
+    history.push("")
+    return json;
+  });
 
   return {
     type: 'ADD_GARAGE',

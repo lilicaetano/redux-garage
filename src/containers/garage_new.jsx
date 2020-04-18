@@ -4,13 +4,16 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 import Aside from '../components/aside';
-import { addCar } from '../actions';
+import { addGarage } from '../actions';
 
-class CardsNew extends Component {
+class GarageNew extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
-
-    const garage = { name: 'TODO', address: 'TODO', photo: 'TODO' };
+    const garage = {
+      name: e.target.name.value,
+      address: e.target.address.value,
+      photo: e.target.photo.value
+    };
     this.props.addGarage(this.props.history, garage);
   }
 
@@ -24,15 +27,15 @@ class CardsNew extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="InputBrand">Name</label>
-            <input type="text" className="form-control" id="InputBrand" placeholder="San Petrolyo" />
+            <input type="text" name="name" className="form-control" id="InputBrand" placeholder="San Petrolyo" />
           </div>
           <div className="form-group">
             <label htmlFor="InputModel">Address</label>
-            <input type="text" className="form-control" id="InputModel" placeholder="London" />
+            <input type="text" name="address" className="form-control" id="InputModel" placeholder="London" />
           </div>
           <div className="form-group">
             <label htmlFor="InputOwner">Photo</label>
-            <input type="text" className="form-control" id="InputOwner" placeholder="James Bond" />
+            <input type="text" name="photo" className="form-control" id="InputOwner" placeholder="James Bond" />
           </div>
           <button type="submit">Add garage</button>
         </form>
@@ -48,7 +51,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addCar }, dispatch);
+  return bindActionCreators({ addGarage }, dispatch);
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CardsNew));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GarageNew));

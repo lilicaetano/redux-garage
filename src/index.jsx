@@ -34,10 +34,10 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact component={GarageIndex} />
           <Route path="/garage/new" exact component={GarageNew} />
-          <Route path="/garage/:id" component={GarageShow} />
           <Route path="/garage/:garageId/cars" exact component={CarsIndex} />
           <Route path="/garage/:garageId/cars/new" exact component={CarsNew} />
           <Route path="/garage/:garageId/cars/:id" component={CarsShow} />
+          <Route path="/garage/:id" component={GarageShow} />
         </Switch>
       </div>
     </Router>
