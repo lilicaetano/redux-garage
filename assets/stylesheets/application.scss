@@ -232,3 +232,63 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
+
+/* Garage */
+.garage-logo {
+  height: 120px;
+}
+
+.garage-details {
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.garage-details > span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.garage-details > ul > li {
+  margin-bottom: 4px;
+}
+
+.garage-smallad {
+  display: flex;
+  position: relative;
+  margin: 10px;
+  height: 121px;
+  border-bottom: 1px solid #f4f4f4;
+  background: white;
+}
+
+.garage-smallad > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.garage-container {
+  width: calc(100% - 220px);
+  height: 100%;
+  background: #dbdbdb;
+  overflow: scroll;
+}
+
+.garage-card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+  background: white;
+}
+
+.garage-picture {
+  width: 220px;
+  height: 220px;
+}
+
+.garage-details {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 420px);
+}

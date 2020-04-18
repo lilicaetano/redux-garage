@@ -1,31 +1,43 @@
+/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 import Aside from '../components/aside';
-import { removeGarage } from '../actions';
+import { removeGarage, fetchGarages } from '../actions';
 
 class GarageShow extends Component {
+  componentWillMount() {
+    if (!this.props.garage) {
+      this.props.fetchGarages();
+    }
+  }
+
   handleClick = () => {
-    this.props.removeGarage(this.props.history, this.props.garage);
+    this.props.removeGarage(this.props.history, this.props.garage._id);
   }
 
   render () {
     const garage = this.props.garage;
+
+    console.log('garage', this.props.garage);
+
     if (!garage) {
       return (
         <Aside key="aside">
           <Link to="/">Back to list</Link>
-        </Aside>);
+        </Aside>
+      );
     }
+
     return [
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
       <div className="garage-container" key="garage">
         <div className="garage-card">
-          <img className="garage-picture" src="/assets/images/garage.png"/>
+          <img alt={garage.name} className="garage-picture" src="/assets/images/garage.png" />
           <div className="garage-details">
             <span>{garage.name}</span>
             <ul>
@@ -33,7 +45,7 @@ class GarageShow extends Component {
             </ul>
           </div>
           <button className="delete" onClick={this.handleClick}>
-            <i className="fa fa-trash-o" aria-hidden="true"></i>
+            <i className="fa fa-trash-o" aria-hidden="true" />
             Delete
           </button>
         </div>
@@ -43,14 +55,14 @@ class GarageShow extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  const id = parseInt(ownProps.match.params.id);
+  const id = ownProps.match.params.id;
   return {
-    garage: state.garages.find((garage) => garage.id === id),
+    garage: state.garages.find(garage => garage._id === id),
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ removeGarage }, dispatch);
+  return bindActionCreators({ removeGarage, fetchGarages }, dispatch);
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GarageShow));

@@ -10,14 +10,16 @@ import { createHistory as history } from 'history';
 import CarsIndex from './containers/cars_index';
 import CarsShow from './containers/cars_show';
 import CarsNew from './containers/cars_new';
+import GarageIndex from './containers/garage_index';
+import GarageShow from './containers/garage_show';
+import GarageNew from './containers/garage_new';
 import '../assets/stylesheets/application.scss';
 
 import carsReducer from './reducers/cars_reducer';
-
-const garageInitialState = "bricolman"; // prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`,
+import garagesReducer from './reducers/garages_reducer';
 
 const reducers = combineReducers({
-  garage: (state = garageInitialState, action) => state,
+  garages: garagesReducer,
   cars: carsReducer,
 });
 
@@ -31,10 +33,11 @@ ReactDOM.render(
       <div className="view-container">
         <Switch>
           <Route path="/" exact component={GarageIndex} />
-          <Route path="/garage/new" component={GarageNew} />
+          <Route path="/garage/new" exact component={GarageNew} />
           <Route path="/garage/:id" component={GarageShow} />
-          <Route path="/cars/new" exact component={CarsNew} />
-          <Route path="/cars/:id" component={CarsShow} />
+          <Route path="/garage/:garageId/cars" exact component={CarsIndex} />
+          <Route path="/garage/:garageId/cars/new" exact component={CarsNew} />
+          <Route path="/garage/:garageId/cars/:id" component={CarsShow} />
         </Switch>
       </div>
     </Router>
