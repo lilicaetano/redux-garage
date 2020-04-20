@@ -19,7 +19,7 @@ class GarageNew extends Component {
 
   uploadWidget = () => {
     window.cloudinary.openUploadWidget(
-      { cloud_name: 'dwhyp7x92', upload_preset: 'v3odun1f', tags: ['garage'] },
+      { cloud_name: 'dwhyp7x92', upload_preset: 'garage', tags: ['garage'] },
       (error, result) => {
         console.log(result);
       }
@@ -31,7 +31,7 @@ class GarageNew extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')"}}>
+      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }}>
         <div className="overlay" />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">

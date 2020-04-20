@@ -33,21 +33,22 @@ class GarageShow extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div className="garage-container" key="garage">
-        <div className="garage-card">
-          <img alt={garage.name} className="garage-picture" src="/assets/images/garage.png" />
-          <div className="garage-details">
-            <span>{garage.name}</span>
-            <ul>
-              <li><strong>Address:</strong> {garage.address}</li>
-            </ul>
+      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }} >
+        <div className="overlay" />
+          <div className="garage-card">
+            <img alt={garage.name} className="garage-picture" src="/assets/images/garage.png" />
+            <div className="garage-details">
+              <span>{garage.name}</span>
+              <ul>
+                <li><strong>Address:</strong> {garage.address}</li>
+              </ul>
+            </div>
+          <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
+            <button className="delete" onClick={this.handleClick}>
+              <i className="fa fa-trash-o" aria-hidden="true" />
+              Delete
+            </button>
           </div>
-          <button className="delete" onClick={this.handleClick}>
-            <i className="fa fa-trash-o" aria-hidden="true" />
-            Delete
-          </button>
-        </div>
-        <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
       </div>
     ];
   }

@@ -280,6 +280,10 @@ button {
   position: relative;
   margin: 10px;
   background: white;
+  justify-content: center;
+  width: calc(100% - 220px);
+  background-position: center center;
+  z-index: 2;
 }
 
 .garage-picture {

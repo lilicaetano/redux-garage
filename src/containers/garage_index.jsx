@@ -32,9 +32,9 @@ class GarageIndex extends Component {
               <Link to={`/garage/${garage._id}`} key={garage._id} />
               <img className="garage-logo" src="assets/images/logo.png" alt="garage-logo" />
               <div className="garage-details">
-                <span>{garage.name} - {garage.model}</span>
+                <span>{garage.name}</span>
                 <ul>
-                  <li><strong>Owner:</strong> {garage.owner}</li>
+                  <li><strong>Address:</strong> {garage.address}</li>
                 </ul>
               </div>
             </div>
