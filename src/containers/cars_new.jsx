@@ -22,9 +22,10 @@ class CardsNew extends Component {
   };
 
   render() {
+    const garageId = this.props.match.params.garageId;
     return [
       <Aside key="aside">
-        <Link to="/">Back to list</Link>
+        <Link to={`/garage/${garageId}/cars`}>Back to list</Link>
       </Aside>,
       <div
         key="add"

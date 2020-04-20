@@ -7,12 +7,20 @@ import Aside from '../components/aside';
 import { addGarage } from '../actions';
 
 class GarageNew extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imgUrl: null,
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const garage = {
       name: e.target.name.value,
       address: e.target.address.value,
-      photo: e.target.photo.value
+      photo: this.state.imgUrl
     };
     this.props.addGarage(this.props.history, garage);
   }
@@ -21,7 +29,9 @@ class GarageNew extends Component {
     window.cloudinary.openUploadWidget(
       { cloud_name: 'dwhyp7x92', upload_preset: 'garage', tags: ['garage'] },
       (error, result) => {
-        console.log(result);
+        this.setState({
+          imgUrl: result[0].url,
+        });
       }
     );
   }
@@ -43,7 +53,7 @@ class GarageNew extends Component {
             <input type="text" name="address" className="form-control" id="InputModel" placeholder="London" />
           </div>
           <div className="form-group">
-            <button onClick={this.uploadWidget.bind(this)} className="upload-button">Add Photo</button>
+            <button type="button" onClick={this.uploadWidget} className="upload-button">Add Photo</button>
           </div>
           <button type="submit">Add garage</button>
         </form>

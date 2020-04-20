@@ -4,10 +4,10 @@ export function fetchCars(garageId) {
   const url = `${BASE_URL}/${garageId}`;
   const promise = fetch(url)
     .then(r => r.json())
-    .then(garage => {
+    .then((garage) => {
       return garage.cars || [];
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       return [];
     });
@@ -83,11 +83,11 @@ export function addGarage(history, garage) {
     },
     body: JSON.stringify(garage)
   })
-  .then(r => r.json())
-  .then((json) => {
-    history.push("")
-    return json;
-  });
+    .then(r => r.json())
+    .then((json) => {
+      history.push("");
+      return json;
+    });
 
   return {
     type: 'ADD_GARAGE',

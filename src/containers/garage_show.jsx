@@ -36,19 +36,19 @@ class GarageShow extends Component {
       <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }} >
         <div className="overlay" />
           <div className="garage-card">
-            <img alt={garage.name} className="garage-picture" src="/assets/images/garage.png" />
+            <img alt={garage.name} className="garage-picture" src={garage.photo} />
             <div className="garage-details">
               <span>{garage.name}</span>
               <ul>
                 <li><strong>Address:</strong> {garage.address}</li>
               </ul>
-            </div>
+          </div>
           <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
             <button className="delete" onClick={this.handleClick}>
               <i className="fa fa-trash-o" aria-hidden="true" />
               Delete
-            </button>
-          </div>
+          </button>
+        </div>
       </div>
     ];
   }
