@@ -17,6 +17,15 @@ class GarageNew extends Component {
     this.props.addGarage(this.props.history, garage);
   }
 
+  uploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      { cloud_name: 'dwhyp7x92', upload_preset: 'v3odun1f', tags: ['garage'] },
+      (error, result) => {
+        console.log(result);
+      }
+    );
+  }
+
   render () {
     return [
       <Aside key="aside">
@@ -34,8 +43,7 @@ class GarageNew extends Component {
             <input type="text" name="address" className="form-control" id="InputModel" placeholder="London" />
           </div>
           <div className="form-group">
-            <label htmlFor="InputOwner">Photo</label>
-            <input type="text" name="photo" className="form-control" id="InputOwner" placeholder="James Bond" />
+            <button onClick={this.uploadWidget.bind(this)} className="upload-button">Add Photo</button>
           </div>
           <button type="submit">Add garage</button>
         </form>
