@@ -32,13 +32,20 @@ class CarsShow extends Component {
       <Aside key="aside">
         <Link to={`/garage/${garageId}/cars`}>Back to list</Link>
       </Aside>,
-      <div className="list-container" key="car">
-        {JSON.stringify(this.props.car)}
-        <button className="delete" onClick={this.handleClick}>
-          <i className="fa fa-trash-o" aria-hidden="true" />
-          Delete
-        </button>
-      </div>
+      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }} >
+        <div className="overlay" />
+          <div className="garage-card">
+          <img alt={car.index} className="car-picture" src={car.photo} />
+            {JSON.stringify(this.props.car)}
+            <button className="edit" onClick={this.handleClick}>
+              Edit
+            </button>        
+            <button className="delete" onClick={this.handleClick}>
+              <i className="fa fa-trash-o" aria-hidden="true" />
+              Delete
+            </button>
+          </div> 
+        </div>  
     ];
   }
 }

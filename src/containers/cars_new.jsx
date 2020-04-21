@@ -21,6 +21,17 @@ class CardsNew extends Component {
     this.props.addCar(this.props.history, garageId, car);
   };
 
+  uploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      { cloud_name: 'dwhyp7x92', upload_preset: 'cars10', tags: ['car'] },
+      (error, result) => {
+        this.setState({
+          imgUrl: result[0].url,
+        });
+      }
+    );
+  }
+
   render() {
     const garageId = this.props.match.params.garageId;
     return [
@@ -73,6 +84,9 @@ class CardsNew extends Component {
               id="InputPlate"
               placeholder="EGU-503H"
             />
+          </div>
+          <div className="form-group">
+            <button type="button" onClick={this.uploadWidget} className="upload-button">Add Photo</button>
           </div>
           <button type="submit">Add car</button>
         </form>
