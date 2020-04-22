@@ -45,7 +45,7 @@ class GarageShow extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }} >
+      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }} >
         <div className="overlay" />
           <div className="garage-card">
             <img alt={garage.name} className="garage-picture" src={garage.photo} />
@@ -53,6 +53,7 @@ class GarageShow extends Component {
               <span>{garage.name}</span>
               <ul>
                 <li><strong>Address:</strong> {garage.address}</li>
+                <li><strong>Description:</strong> {garage.description}</li>
               </ul>
           </div>
           <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>

@@ -6,8 +6,11 @@ const Aside = (props) => {
       <div className="illustration" style={{ backgroundImage: "url('/assets/images/redwheels.jpg')" }} />
       <img className="logo" src="/assets/images/car_icon.png" alt="logo" />
       <h1>{props.garage}</h1>
-      <p>Our garage is the best. Reasonable prices, always on time, we are the best.</p>
+      <p>Service & Repair</p>
       {props.children}
+      <div className="footer">
+        © 2020 Liliana Caetano
+      </div>
     </div>
   );
 };

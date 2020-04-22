@@ -12,7 +12,7 @@ class GarageNew extends Component {
 
     this.state = {
       imgUrl: null,
-    }
+    };
   }
 
   handleSubmit = (e) => {
@@ -20,6 +20,7 @@ class GarageNew extends Component {
     const garage = {
       name: e.target.name.value,
       address: e.target.address.value,
+      description: e.target.description.value,
       photo: this.state.imgUrl
     };
     this.props.addGarage(this.props.history, garage);
@@ -41,16 +42,20 @@ class GarageNew extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/form.jpg')" }}>
+      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
         <div className="overlay" />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="InputBrand">Name</label>
-            <input type="text" name="name" className="form-control" id="InputBrand" placeholder="San Petrolyo" />
+            <input type="text" name="name" className="form-control" id="InputBrand" placeholder="Auto Repair" />
           </div>
           <div className="form-group">
             <label htmlFor="InputModel">Address</label>
             <input type="text" name="address" className="form-control" id="InputModel" placeholder="London" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="InputModel">Description</label>
+            <input type="text" name="description" className="form-control" id="InputModel" placeholder="Add your description" />
           </div>
           <div className="form-group">
             <button type="button" onClick={this.uploadWidget} className="upload-button">Add Photo</button>

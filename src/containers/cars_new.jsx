@@ -16,6 +16,7 @@ class CardsNew extends Component {
       brand: e.target.brand.value,
       model: e.target.model.value,
       plate: e.target.plate.value,
+      photo: this.state.imgUrl
     };
 
     this.props.addCar(this.props.history, garageId, car);
@@ -41,7 +42,7 @@ class CardsNew extends Component {
       <div
         key="add"
         className="form-container"
-        style={{ backgroundImage: "url('/assets/images/form.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/background.jpg')" }}
       >
         <div className="overlay" />
         <form onSubmit={this.handleSubmit}>

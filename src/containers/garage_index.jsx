@@ -18,14 +18,14 @@ class GarageIndex extends Component {
         <Aside key="aside">
           <Link to="/garage/new">Add a garage</Link>
         </Aside>,
-        <div className="no-garage" key="nogarage">No garage yet</div>
+        <div className="no-garage" key="nogarage" style={{ backgroundImage: "url('/assets/images/background.jpg')" }} >No garage yet</div>
       ];
     }
     return [
       <Aside key="aside">
         <Link to="/garage/new">Add a garage</Link>
       </Aside>,
-      <div className="list-container" key="garages">
+      <div className="list-container" key="garages" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
         {this.props.garages.map((garage) => {
           return (
             <div key={garage._id} className="garage-smallad">

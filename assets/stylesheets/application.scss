@@ -33,8 +33,8 @@ ul {
   height: 90vh;
   background: white;
   overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 5px 7px 17px rgba(250, 8, 8, 0.858);
+  border-radius: 2px;
+  box-shadow: 0 0 17px 7px rgba(249, 81, 81, 0.858);
 }
 
 /* Index */
@@ -48,6 +48,7 @@ ul {
 }
 
 .aside {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,15 +85,27 @@ ul {
   border-radius: 4px;
   border: 1px solid black;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .aside > p {
   padding: 0 20px;
+  margin-top: 20px;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4em;
   opacity: 0.6;
 }
+
+.footer {
+  padding: 0 20px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  line-height: 1.4em;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 2px;
+} 
 
 
 .list-container {
@@ -100,6 +113,9 @@ ul {
   height: 100%;
   background: #dbdbdb;
   overflow: scroll;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
 }
 
 .car-logo {
@@ -154,7 +170,7 @@ ul {
 
 .car-picture {
   width: 220px;
-  height: 220px;
+  height: 121px;
 }
 
 .car-details {
@@ -204,7 +220,7 @@ ul {
   bottom: 0;
   left: 0;
   background-color: #fff;
-  opacity: 0.6;
+  opacity: 0;
   z-index: 1;
 }
 
@@ -282,17 +298,18 @@ button {
   background: white;
   justify-content: center;
   width: calc(100% - 220px);
+  height: 300px;
   background-position: center center;
   z-index: 2;
 }
 
 .garage-picture {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 121px;
 }
 
 .garage-details {
   display: flex;
   flex-direction: column;
   width: calc(100% - 420px);
-}
+} 
