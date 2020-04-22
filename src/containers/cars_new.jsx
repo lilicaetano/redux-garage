@@ -23,7 +23,7 @@ class CardsNew extends Component {
 
   uploadWidget = () => {
     window.cloudinary.openUploadWidget(
-      { cloud_name: 'dwhyp7x92', upload_preset: 'cars10', tags: ['car'] },
+      { cloud_name: 'dwhyp7x92', upload_preset: 'garage', tags: ['garage'] },
       (error, result) => {
         this.setState({
           imgUrl: result[0].url,

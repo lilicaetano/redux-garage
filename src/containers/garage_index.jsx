@@ -30,7 +30,7 @@ class GarageIndex extends Component {
           return (
             <div key={garage._id} className="garage-smallad">
               <Link to={`/garage/${garage._id}`} key={garage._id} />
-              <img className="garage-logo" src="assets/images/logo.png" alt="garage-logo" />
+              <img alt={garage.name} className="garage-picture" src={garage.photo} />
               <div className="garage-details">
                 <span>{garage.name}</span>
                 <ul>

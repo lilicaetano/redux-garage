@@ -18,6 +18,18 @@ class GarageShow extends Component {
     this.props.removeGarage(this.props.history, this.props.garage._id);
   }
 
+  openUploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      { cloud_name: 'dwhyp7x92', upload_preset: 'garage', tags: ['garage'] },
+      (error, result) => {
+        this.setState({
+          imgUrl: result[0].url,
+        });
+      }
+    );
+  }
+
+
   render () {
     const garage = this.props.garage;
 
