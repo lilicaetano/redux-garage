@@ -19,7 +19,7 @@ class CarsIndex extends Component {
         <Aside key="aside">
           <Link to={`/garage/${this.props.garageId}/cars/new`}>Add a car</Link>
         </Aside>,
-        <div className="no-car" key="nocar" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>No car yet</div>
+        <div className="no-car" key="nocar" style={{ backgroundImage: "url('https://res.cloudinary.com/dwhyp7x92/image/upload/v1587653028/garage/background_wnzvnd.jpg')" }}>No car yet</div>
       ];
     }
     return [
@@ -27,7 +27,7 @@ class CarsIndex extends Component {
         <Link to={`/garage/${this.props.garageId}/cars/new`}>Add a car</Link>
         <Link to={`/`}>Back to garages</Link>
       </Aside>,
-      <div className="list-container" key="cars" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
+      <div className="list-container" key="cars" style={{ backgroundImage: "url('https://res.cloudinary.com/dwhyp7x92/image/upload/v1587653028/garage/background_wnzvnd.jpg')" }}>
         {this.props.cars.map((car, index) => {
           return (
             <div key={index} className="car-smallad">

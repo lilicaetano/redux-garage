@@ -43,7 +43,7 @@ class GarageNew extends Component {
       <Aside key="aside">
         <Link to="/">Back to list</Link>
       </Aside>,
-      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }}>
+      <div key="add" className="form-container" style={{ backgroundImage: "url('https://res.cloudinary.com/dwhyp7x92/image/upload/v1587653028/garage/background_wnzvnd.jpg')" }}>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="InputBrand">Name</label>

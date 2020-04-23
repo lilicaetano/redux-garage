@@ -34,7 +34,7 @@ class CarsShow extends Component {
       <Aside key="aside">
         <Link to={`/garage/${garageId}/cars`}>Back to list</Link>
       </Aside>,
-      <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }} >
+      <div key="add" className="form-container" style={{ backgroundImage: "url('https://res.cloudinary.com/dwhyp7x92/image/upload/v1587653028/garage/background_wnzvnd.jpg')" }} >
         <div className="overlay" />
         <div className="garage-card">
           <img alt={car.index} className="car-picture-1" src={car.photo} />

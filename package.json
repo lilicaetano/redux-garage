@@ -31,7 +31,7 @@
     "redux-promise": "^0.5.3"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
     "deploy": "echo \"You are using react-router. You can't deploy on GitHub Pages\""
   }
 }

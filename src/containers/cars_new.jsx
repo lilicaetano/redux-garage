@@ -42,7 +42,7 @@ class CardsNew extends Component {
       <div
         key="add"
         className="form-container"
-        style={{ backgroundImage: "url('/assets/images/background.jpg')" }}
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dwhyp7x92/image/upload/v1587653028/garage/background_wnzvnd.jpg')" }}
       >
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
