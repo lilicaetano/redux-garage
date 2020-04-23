@@ -14,9 +14,11 @@ class CarsShow extends Component {
   }
 
   handleClick = () => {
-    this.props.removeCar(this.props.history, this.props.car);
+    // eslint-disable-next-line no-alert
+    if (confirm("Are you sure you want to delete this car?")) {
+      this.props.removeCar(this.props.history, this.props.car);
+    }
   }
-
 
   render () {
     const car = this.props.car;

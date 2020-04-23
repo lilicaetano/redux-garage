@@ -15,7 +15,10 @@ class GarageShow extends Component {
   }
 
   handleClick = () => {
-    this.props.removeGarage(this.props.history, this.props.garage._id);
+    // eslint-disable-next-line no-alert
+    if (confirm("Are you sure you want to delete this garage?")) {
+      this.props.removeGarage(this.props.history, this.props.garage._id);
+    }
   }
 
   openUploadWidget = () => {
@@ -47,21 +50,20 @@ class GarageShow extends Component {
       </Aside>,
       <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }} >
         <div className="overlay" />
-          <div className="garage-card">
-            <img alt={garage.name} className="car-picture-1" src={garage.photo} />
-            <div className="garage-details">
-              <span>{garage.name}</span>
-              <ul>
-                <li><strong>Address:</strong> {garage.address}</li>
-                <li><strong>Description:</strong> {garage.description}</li>
-              </ul>
+        <div className="garage-card">
+          <img alt={garage.name} className="car-picture-1" src={garage.photo} />
+          <div className="garage-details">
+            <span>{garage.name}</span>
+            <ul>
+              <li>{garage.description}</li>
+            </ul>
           </div>
-            <div className="show">
-              <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
-            </div>
-            <button className="delete" onClick={this.handleClick}>
-              <i className="fa fa-trash-o" aria-hidden="true" />
-              Delete
+          <button className="show">
+            <Link to={`/garage/${garage._id}/cars`}>Show Cars</Link>
+          </button>
+          <button className="delete" onClick={this.handleClick}>
+            <i className="fa fa-trash-o" aria-hidden="true" />
+            Delete
           </button>
         </div>
       </div>

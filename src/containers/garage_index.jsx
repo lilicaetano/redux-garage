@@ -34,7 +34,7 @@ class GarageIndex extends Component {
               <div className="garage-details">
                 <span>{garage.name}</span>
                 <ul>
-                  <li><strong>Address:</strong> {garage.address}</li>
+                  <li><strong>{garage.address}</strong></li>
                 </ul>
               </div>
             </div>

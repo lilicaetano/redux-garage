@@ -14,7 +14,7 @@ export function fetchCars(garageId) {
 
   return {
     type: 'FETCH_CARS',
-    payload: promise // Will be resolved by redux-promise
+    payload: promise
   };
 }
 
@@ -45,7 +45,7 @@ export function addCar(history, garageId, car) {
 
   return {
     type: 'ADD_CAR',
-    payload: promise // Will be resolved by redux-promise
+    payload: promise
   };
 }
 
@@ -57,7 +57,7 @@ export function fetchGarages() {
 
   return {
     type: 'FETCH_GARAGES',
-    payload: promise // Will be resolved by redux-promise
+    payload: promise
   };
 }
 
@@ -91,6 +91,6 @@ export function addGarage(history, garage) {
 
   return {
     type: 'ADD_GARAGE',
-    payload: promise // Will be resolved by redux-promise
+    payload: promise
   };
 }

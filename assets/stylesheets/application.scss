@@ -1,6 +1,5 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  //background: #142850 !important;
   background: black;
 }
 
@@ -203,8 +202,12 @@ ul {
 .delete {
   position: absolute;
   width: 120px;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.delete:hover {
+  transform: scale(1.02); 
 }
 
 .delete > i {
@@ -223,25 +226,12 @@ ul {
   background-position: center center;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  opacity: 0;
-  z-index: 1;
-}
-
 form {
   position: relative;
   background: white;
   padding: 20px;
   width: 420px;
-  z-index: 2;
+  height: 425px;
 }
 
 label {
@@ -268,12 +258,17 @@ button {
   border-radius: 0 2px 2px 0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   border: none;
-  background-color: grey;
+  background-color: rgb(174, 174, 174);
   color: white;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  bottom: 10px;
+  bottom: 20px;
+  right: 155px;
+}
+
+.show:hover {
+  transform: scale(1.02); 
 }
 
 
@@ -289,7 +284,7 @@ button {
 
 .garage-details > span {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .garage-details > ul > li {
@@ -327,8 +322,8 @@ button {
   position: relative;
   margin: 10px;
   background: white;
-  width: calc(100% - 100px);
-  height: 250px;
+  width: calc(100% - 60px);
+  height: 280px;
   background-position: center center;
   z-index: 2;
 }
@@ -350,5 +345,27 @@ button {
 }
 
 li {
-margin: 10px;
+margin-bottom: 10px;
+}
+
+.upload-button {
+  color: black;
+  background-color: rgb(174, 174, 174);
+  position: absolute;
+}
+
+.upload-button:hover {
+  transform: scale(1.02);
+}
+
+.upload-button-1 {
+  background-color: black;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+}
+
+.upload-button-1:hover {
+  transform: scale(1.02);
 }

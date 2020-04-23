@@ -44,7 +44,6 @@ class CardsNew extends Component {
         className="form-container"
         style={{ backgroundImage: "url('/assets/images/background.jpg')" }}
       >
-        <div className="overlay" />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="InputBrand">Brand</label>
@@ -89,7 +88,7 @@ class CardsNew extends Component {
           <div className="form-group">
             <button type="button" onClick={this.uploadWidget} className="upload-button">Add Photo</button>
           </div>
-          <button type="submit">Add car</button>
+          <button type="submit" className="upload-button-1">Add car</button>
         </form>
       </div>,
     ];
