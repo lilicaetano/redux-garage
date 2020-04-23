@@ -1,9 +1,10 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
   devtool: 'sourcemap',
@@ -24,5 +25,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Red Wheels',
+      filename: 'index.html',
+      template: 'index.html'
+    })
+  ]
 };
