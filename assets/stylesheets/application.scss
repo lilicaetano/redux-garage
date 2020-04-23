@@ -125,6 +125,7 @@ ul {
 .car-details {
   padding: 10px 20px;
   box-sizing: border-box;
+  margin: 1rem;
 }
 
 .car-details > span {
@@ -143,6 +144,10 @@ ul {
   height: 121px;
   border-bottom: 1px solid #f4f4f4;
   background: white;
+}
+
+.car-smallad:hover {
+  transform: scale(1.01);
 }
 
 .car-smallad > a {
@@ -169,8 +174,15 @@ ul {
 }
 
 .car-picture {
+  object-fit: cover;
   width: 220px;
   height: 121px;
+}
+
+.car-picture-1 {
+  object-fit: cover;
+  width: 21rem;
+  
 }
 
 .car-details {
@@ -191,8 +203,8 @@ ul {
 .delete {
   position: absolute;
   width: 120px;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
 }
 
 .delete > i {
@@ -249,6 +261,22 @@ button {
   cursor: pointer;
 }
 
+.show {
+  position: absolute;
+  padding: 10px 17px;
+  margin-left: -2px;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border: none;
+  background-color: grey;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  bottom: 10px;
+}
+
+
 /* Garage */
 .garage-logo {
   height: 120px;
@@ -272,9 +300,13 @@ button {
   display: flex;
   position: relative;
   margin: 10px;
-  height: 121px;
+  height: 160px;
   border-bottom: 1px solid #f4f4f4;
   background: white;
+}
+
+.garage-smallad:hover {
+  transform: scale(1.01);
 }
 
 .garage-smallad > a {
@@ -292,24 +324,31 @@ button {
 
 .garage-card {
   display: flex;
-  align-items: center;
   position: relative;
   margin: 10px;
   background: white;
-  justify-content: center;
-  width: calc(100% - 220px);
-  height: 300px;
+  width: calc(100% - 100px);
+  height: 250px;
   background-position: center center;
   z-index: 2;
 }
 
 .garage-picture {
-  width: 200px;
-  height: 121px;
+  width: 300px;
+  height: 160px;
 }
 
 .garage-details {
   display: flex;
   flex-direction: column;
   width: calc(100% - 420px);
+  margin: 2rem;
 } 
+
+.description {
+  margin: 2rem;
+}
+
+li {
+margin: 10px;
+}

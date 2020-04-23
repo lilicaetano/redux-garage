@@ -35,8 +35,8 @@ class CarsShow extends Component {
       <div key="add" className="form-container" style={{ backgroundImage: "url('/assets/images/background.jpg')" }} >
         <div className="overlay" />
         <div className="garage-card">
-          <img alt={car.index} className="car-picture" src={car.photo} />
-          <ul>
+          <img alt={car.index} className="car-picture-1" src={car.photo} />
+          <ul className="description">
             <li><strong>Brand:</strong> {car.brand}</li>
             <li><strong>Model:</strong> {car.model}</li>
             <li><strong>Owner:</strong> {car.owner}</li>
