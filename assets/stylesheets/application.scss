@@ -111,7 +111,7 @@ ul {
   width: calc(100% - 220px);
   height: 100%;
   background: #dbdbdb;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -161,7 +161,7 @@ ul {
   width: calc(100% - 220px);
   height: 100%;
   background: #dbdbdb;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .car-card {
@@ -314,7 +314,7 @@ button {
   width: calc(100% - 220px);
   height: 100%;
   background: #dbdbdb;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .garage-card {
